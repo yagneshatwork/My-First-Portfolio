@@ -22,12 +22,10 @@ import {
   Briefcase,
   CheckCircle,
   Sun,
-  Download,
   Calendar,
   Code,
   Star,
   Motorbike,
-  PhoneCall,
 } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
@@ -329,26 +327,11 @@ const Navbar = () => {
               Contact
             </a>
             <ThemeToggle />
-            <motion.a
-              whileTap={{ scale: 0.97 }}
-              href={portfolioData.phone}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-foreground text-background text-sm font-medium hover:bg-foreground/90 transition-colors"
-            >
-              <PhoneCall className="w-3.5 h-3.5" />
-              Call
-            </motion.a>
           </div>
 
           {/* Mobile controls */}
           <div className="flex md:hidden gap-2 items-center">
             <ThemeToggle />
-            <a
-              href={portfolioData.resume}
-              className="p-2 rounded-lg bg-foreground text-background"
-              aria-label="Download Resume"
-            >
-              <Download className="w-4 h-4" />
-            </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors"
@@ -415,20 +398,6 @@ const Navbar = () => {
                   Contact
                 </a>
                 <div className="border-t border-border my-1"></div>
-                <a
-                  href={portfolioData.phone}
-                  className="px-4 py-3 text-sm text-foreground/80 hover:bg-secondary/50 transition-colors flex items-center gap-2"
-                >
-                  <PhoneCall className="w-4 h-4" />
-                  Call Me
-                </a>
-                <a
-                  href={portfolioData.resume}
-                  className="px-4 py-3 text-sm text-foreground/80 hover:bg-secondary/50 transition-colors flex items-center gap-2"
-                >
-                  <Download className="w-4 h-4" />
-                  Download Resume
-                </a>
               </div>
             </div>
           </motion.div>
@@ -537,22 +506,6 @@ const HeroSection = () => {
             aria-label="Email"
           >
             <Mail className="w-5 h-5" />
-          </motion.a>
-        </motion.div>
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.35, duration: 0.5 }}
-          className="mt-6"
-        >
-          <motion.a
-            whileTap={{ scale: 0.97 }}
-            href={portfolioData.resume}
-
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 shadow-lg shadow-primary/25 transition-all"
-          >
-            <Download className="w-4 h-4" />
-            Download Resume
           </motion.a>
         </motion.div>
       </div>
